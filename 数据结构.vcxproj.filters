@@ -27,7 +27,7 @@
     <ClCompile Include="productAndConsumer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="t.cpp">
+    <ClCompile Include="readAndWrite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -142,8 +142,8 @@
   <ItemGroup>
     <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="productAndConsumer.cpp" />
+    <ClCompile Include="readAndWrite.cpp" />
     <ClCompile Include="SingleList.cpp" />
-    <ClCompile Include="t.cpp" />
     <ClCompile Include="双链表.cpp" />
   </ItemGroup>
   <ItemGroup>

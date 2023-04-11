@@ -73,14 +73,14 @@ public:
 	}
 };
 using Q = Queue<int,string,MyPro<int,string>>;
-int main()
-{
-	srand(time(NULL));
-	
-	Q q;
-	thread t1(&Q::pro,&q);
-	thread t2(&Q::con,&q);
-
-	t1.join();
-	t2.join();
-}
+//int main()
+//{
+//	srand(time(NULL));
+//	
+//	Q q;
+//	thread t1(&Q::pro,&q);
+//	thread t2(&Q::con,&q);
+//
+//	t1.join();
+//	t2.join();
+//}
