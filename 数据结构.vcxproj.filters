@@ -24,5 +24,16 @@
     <ClCompile Include="双链表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="productAndConsumer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="t.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="doubleList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
