@@ -1,5 +1,6 @@
 # data-and-struct-c-plus-plus-
 写了一些常用的数据类型
+顺序表
 链表 数组指针
 读写者问题
 有一些数据结构操作见leetcode：
