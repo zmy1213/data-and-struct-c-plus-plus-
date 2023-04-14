@@ -75,6 +75,7 @@ int InOrderThreading(BiThrTree<T> &Thrt, BiThrTree<T> &BT)
 	Thrt->LTag = Link;
 	Thrt->RTag = Thread;
 	Thrt->rchild = Thrt;
+
 	if (!BT)
 	{
 		Thrt->lchild = Thrt;
