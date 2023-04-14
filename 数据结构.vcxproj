@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,14 +141,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="productAndConsumer.cpp" />
     <ClCompile Include="readAndWrite.cpp" />
-    <ClCompile Include="SingleList.cpp" />
+    <ClCompile Include="SingleList.h" />
     <ClCompile Include="双链表.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h" />
+    <ClInclude Include="threaded binary tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

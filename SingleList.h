@@ -1,4 +1,6 @@
-﻿#include<iostream>
+﻿#ifndef SingleList_H
+#define  SingleList_H
+#include<iostream>
 #include<type_traits>
 #include<vector>
 using namespace std;
@@ -28,13 +30,13 @@ bool IsEmpty(const LinkList<T> L)
 	return (L->next == nullptr);
 }
 template<typename T>
-bool InsertNode(LinkList<T> L, int index, T &ele)//不带头节点对等于1特殊处理
+bool InsertNode(LinkList<T> L, int index, T& ele)//不带头节点对等于1特殊处理
 {
 	if (L == nullptr)
 		return false;
 	if (index < 1)
 		return false;
-	
+
 	int t = 1;
 	LinkNode<T>* tn = new LinkNode<T>;
 	tn = L;
@@ -60,7 +62,7 @@ void Print(const LinkList<T> L)
 	cout << endl;
 }
 template<typename T>
-bool DeleteNode(LinkList<T> L, int index, T &ele)
+bool DeleteNode(LinkList<T> L, int index, T& ele)
 {
 	if (L == nullptr)
 		return false;
@@ -85,7 +87,7 @@ bool DeleteNode(LinkList<T> L, int index, T &ele)
 	return true;
 }
 template<typename T>
-bool FrontInsert(LinkList<T> p,T ele)
+bool FrontInsert(LinkList<T> p, T ele)
 {
 	if (p == nullptr)
 		return false;
@@ -93,7 +95,7 @@ bool FrontInsert(LinkList<T> p,T ele)
 	if (fro == nullptr)
 		return false;
 
-	
+
 	fro->next = p->next;
 	p->next = fro;
 
@@ -124,7 +126,7 @@ bool NextInsert(LinkList<T> p, T ele)
 
 }
 template<typename T>
-bool DeleteNode(LinkNode<T>* p) 
+bool DeleteNode(LinkNode<T>* p)
 {
 	if (p == nullptr)
 		return false;
@@ -173,7 +175,7 @@ LinkNode<T>* LoacateByValue(LinkList<T> L, int v)
 	return ln;
 }
 template<typename T>
-LinkList<T> TailInsert(LinkList<T> L,vector<T> values)
+LinkList<T> TailInsert(LinkList<T> L, vector<T> values)
 {
 	L = new LinkNode<T>;
 	InitList(L);
@@ -200,7 +202,7 @@ LinkList<T> HeadInsert(LinkList<T> L, vector<T> values)
 	int size = 0;
 	while (size < values.size())
 	{
-		
+
 		s = new LinkNode<T>(values[size]);
 		s->next = L->next;
 		L->next = s;
@@ -238,3 +240,5 @@ LinkList<T> HeadInsert(LinkList<T> L, vector<T> values)
 //	Print(headList);
 //	Print(l);
 //}
+#endif // !SingleList_H
+
