@@ -28,14 +28,16 @@ template<Type T>
 using BiThrTree = BiThrNode<T>*;
 
 template<Type T>
-BiThrNode<T>* CreateBiThrNode(BiThrTree<T> &B,vector<T> &values,int start)
+BiThrNode<T>* CreateBiThrNode(BiThrTree<T> B,vector<T> &values,int start)
 {
 	if (start >= values.size() - 1)
 		return nullptr;
+
 	B = new BiThrNode<T>;
 	B->data = values[start];
 	B->LTag = Link;
 	B->RTag = Link;
+
 	if (2 * start + 1 < values.size())
 	{	
 		CreateBiThrNode(B->lchild, values, 2*start + 1);

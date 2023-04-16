@@ -13,32 +13,56 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\线性表">
+      <UniqueIdentifier>{01f26735-fffd-4a6b-ba68-b33bfe123aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\操作系统的一些结构">
+      <UniqueIdentifier>{79985cdf-5383-4015-b78c-017787afbff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\二叉树">
+      <UniqueIdentifier>{fb6353a3-9ad2-4fa8-bae3-74ca4cd1e8a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\图">
+      <UniqueIdentifier>{4d5be5aa-6a54-4a99-965f-d4a7c971ee6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ordered.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="双链表.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="productAndConsumer.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="readAndWrite.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\操作系统的一些结构</Filter>
+    </ClCompile>
+    <ClCompile Include="productAndConsumer.cpp">
+      <Filter>源文件\操作系统的一些结构</Filter>
+    </ClCompile>
+    <ClCompile Include="Ordered.cpp">
+      <Filter>源文件\线性表</Filter>
     </ClCompile>
     <ClCompile Include="SingleList.h">
+      <Filter>源文件\线性表</Filter>
+    </ClCompile>
+    <ClCompile Include="grouph.cpp">
+      <Filter>源文件\图</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithimGraph.h">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="setGraph.h">
+      <Filter>头文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">
-      <Filter>头文件</Filter>
+      <Filter>源文件\线性表</Filter>
     </ClInclude>
     <ClInclude Include="threaded binary tree.h">
+      <Filter>源文件\二叉树</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="grouph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
