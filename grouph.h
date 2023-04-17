@@ -424,7 +424,7 @@ int Graph<T>::transformArraysUndirected(graphTable<T>& gt, vector<vector<int>> a
 				continue;
 			InsertNode(gt, i + 1);
 			InsertNode(gt, j + 1);
-			AddEdge(gt, i + 1, j + 1, arrays[i][j]);
+			AddEdge(gt, i + 1, j + 1,  0);
 
 		}
 	}
