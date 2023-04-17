@@ -141,7 +141,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="algorithimGraph.h" />
     <ClCompile Include="grouph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
@@ -151,7 +150,6 @@
     <ClCompile Include="SingleList.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config.h" />
     <ClInclude Include="doubleList.h" />
     <ClInclude Include="grouph.h" />
     <ClInclude Include="threaded binary tree.h" />

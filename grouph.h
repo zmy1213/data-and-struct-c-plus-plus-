@@ -132,8 +132,6 @@ private:
 	graphTable<T> gt;
 };
 
-
-//ÁÚ½Ó¾ØÕó·¨
 template<typename T>
 bool Graph<T>::Adjacent(const graphTable<T>& gt, const int from, const int to)
 {

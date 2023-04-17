@@ -45,9 +45,6 @@
     <ClCompile Include="grouph.cpp">
       <Filter>源文件\图</Filter>
     </ClCompile>
-    <ClCompile Include="algorithimGraph.h">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="setGraph.h">
       <Filter>头文件</Filter>
     </ClCompile>
@@ -58,9 +55,6 @@
     </ClInclude>
     <ClInclude Include="threaded binary tree.h">
       <Filter>源文件\二叉树</Filter>
-    </ClInclude>
-    <ClInclude Include="config.h">
-      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="grouph.h">
       <Filter>头文件</Filter>
