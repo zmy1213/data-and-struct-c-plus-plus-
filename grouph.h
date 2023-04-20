@@ -12,7 +12,6 @@
 #include<cmath>
 #include<format>
 #include<algorithm>
-#include<unordered_map>
 #include<unordered_set>
 #include "setGraph.h"
 using namespace std;
@@ -38,7 +37,15 @@ public:
 		this->in = in;
 		this->out = out;
 	}
-	nodeTable(int val) :value(val) {}
+	nodeTable(T val) :value(val) {}
+	nodeTable(T val, int i, int o, vector<nodeTable<T>*> nexts,vector<edgeTable<T>*> edges)
+	{
+		this->value = val;
+		this->in = i;
+		this->out = o;
+		this->nexts = nexts;
+		this->edges = edges;
+	}
 	nodeTable* operator=(const nodeTable<T>& node)
 	{
 	
@@ -126,6 +133,9 @@ public:
 	bool sortedToplogyForCritical(graphTable<T>& gt,stack<nodeTable<T>*>&s,vector<int> &etv);//为关键路径准备的拓扑排序 返回etv
 	bool CriticalPath(graphTable<T>& gt);
 	set<edgeTable<T>*, Compare_Edge_Max<T>> primMST(graphTable<T>& gt);
+	set<edgeTable<T>*, Compare_Edge_Max<T>> krukalMST(graphTable<T>& gt);
+	nodeTable<T>* getMinDistanceAndUnselectedNode(unordered_map<nodeTable<T>*, int>& distanceMap, set<nodeTable<T>*>& torchedNodes);
+	unordered_map<nodeTable<T>*, int>dijkstra(nodeTable<T>* head);
 	Graph(graphTable<T>& g):gt(g) {};
 
 private:
@@ -585,4 +595,83 @@ set<edgeTable<T>*, Compare_Edge_Max<T>> Graph<T>::primMST(graphTable<T>& gt)
 
 	return edges;
 }
+template<typename T>
+set<edgeTable<T>*, Compare_Edge_Max<T>> Graph<T>::krukalMST(graphTable<T> &gt)
+{
+	vector<nodeTable<T>*> lists;
+	for (auto& node : gt.nodes)
+	{
+		lists.push_back(node.second);
+	}
+
+	priority_queue<edgeTable<T>*, vector<edgeTable<T>*>, Compare_Edge_Min<T>> pq;
+	set<edgeTable<T>*,Compare_Edge_Max<T>> res;
+	UnionFindSet uf(lists);
+
+	for (auto& edge : gt.edges)
+	{
+		pq.push(edge);
+	}
+	
+	while (!pq.empty())
+	{
+		edgeTable<T>* p = pq.top();
+		pq.pop();
+		if (!uf.isSameSet(p->from, p->to))
+		{
+			res.insert(p);
+			uf.Union(p->from, p->to);
+		}
+	}
+	return res;
+}
+template<typename T>
+nodeTable<T>* Graph<T>::getMinDistanceAndUnselectedNode(unordered_map<nodeTable<T>*, int> &distanceMap, set<nodeTable<T>*>&torchedNodes)
+{
+	nodeTable<T>* minNode = nullptr;
+	int minDistance = INT_MAX;
+	for (auto& node : distanceMap)
+	{
+		nodeTable<T>* p = node.first;
+		int distance = node.second;
+		if (!torchedNodes.count(p) && distance < minDistance)
+		{
+			minNode = p;
+			minDistance = distance;
+		}
+	}
+	if (minNode == nullptr)
+		return nullptr;
+	return minNode;
+}
+template<typename T>
+unordered_map<nodeTable<T>*, int> Graph<T>::dijkstra(nodeTable<T> *head)
+{
+	unordered_map<nodeTable<T>*, int> distanceMap;
+	distanceMap.emplace(head,0);
+	set<nodeTable<T>*> selectedNodes;
+	nodeTable<T>* minNode = getMinDistanceAndUnselectedNode(distanceMap, selectedNodes);
+
+	while (minNode != nullptr)
+	{
+		int distance = distanceMap.at(minNode);
+		for (auto& edge : minNode->edges)
+		{
+			if (!distanceMap.count(edge->to))
+			{
+				distanceMap.emplace(edge->to, distance + edge->weight);
+			}
+			if (distanceMap.at(edge->to) > distance + edge->weight)
+			{
+				distanceMap.erase(edge->to);
+				distanceMap.emplace(edge->to, distance + edge->weight);
+			}
+		}
+		selectedNodes.insert(minNode);
+		minNode = getMinDistanceAndUnselectedNode(distanceMap, selectedNodes);
+	}
+
+	return distanceMap;
+}
+
 #endif //

@@ -1,5 +1,9 @@
-#include"config.h"
+#ifndef SETGRAPH_H
+#define SETGRAPH_H
 
+#include<unordered_map>
+#include<stack>
+using namespace std;
 template<typename T>
 struct Element
 {
@@ -12,6 +16,7 @@ template<typename T>
 class UnionFindSet
 {
 private:
+	
 	unordered_map<T, Element<T>*> elementMap;
 	unordered_map<Element<T>*, Element<T>*>fatherMap;
 	unordered_map<Element<T>*, int> sizeMap;
@@ -72,3 +77,6 @@ public:
 		}
 	}
 };
+
+#endif // !
+
