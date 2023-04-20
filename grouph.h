@@ -408,7 +408,7 @@ int Graph<T>::transformArraysDirected(graphTable<T>& gt, vector<vector<int>> arr
 		{
 			if (j == i)
 				continue;
-			if (arrays[i][j] == INT_MAX)
+			if (arrays[i][j] == INT_MAX||arrays[i][j] == 0)
 				continue;
 			InsertNode(gt, i + 1);
 			InsertNode(gt, j + 1);
@@ -473,7 +473,6 @@ vector<nodeTable<T>*> Graph<T>::sortedToplogy(graphTable<T>& gt)
 	}
 	return res;
 }
-
 template<typename T>
 bool Graph<T>::sortedToplogyForCritical(graphTable<T>& gt, stack<nodeTable<T>*>& s,vector<int>&etv)
 {
@@ -673,5 +672,6 @@ unordered_map<nodeTable<T>*, int> Graph<T>::dijkstra(nodeTable<T> *head)
 
 	return distanceMap;
 }
+
 
 #endif //
