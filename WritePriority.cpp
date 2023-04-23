@@ -58,16 +58,16 @@ void reader()
 		lc.unlock();
 	}
 }
-int main() {
-    std::vector<std::thread> threads;
-    for (int i = 0; i < kNumReaders; ++i) {
-        threads.emplace_back(reader);
-    }
-    for (int i = 0; i < kNumWriters; ++i) {
-        threads.emplace_back(writer);
-    }
-    for (auto& t : threads) {
-        t.join();
-    }
-    return 0;
-}
+//int main() {
+//    std::vector<std::thread> threads;
+//    for (int i = 0; i < kNumReaders; ++i) {
+//        threads.emplace_back(reader);
+//    }
+//    for (int i = 0; i < kNumWriters; ++i) {
+//        threads.emplace_back(writer);
+//    }
+//    for (auto& t : threads) {
+//        t.join();
+//    }
+//    return 0;
+//}
