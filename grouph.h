@@ -136,10 +136,15 @@ public:
 	set<edgeTable<T>*, Compare_Edge_Max<T>> krukalMST(graphTable<T>& gt);
 	nodeTable<T>* getMinDistanceAndUnselectedNode(unordered_map<nodeTable<T>*, int>& distanceMap, set<nodeTable<T>*>& torchedNodes);
 	unordered_map<nodeTable<T>*, int>dijkstra(nodeTable<T>* head);
-	Graph(graphTable<T>& g):gt(g) {};
+	vector<vector<int>> createArrayByGraph(graphTable<T>& gt);
+	void Floyd(graphTable<T>& gt,vector<vector<T>>& values);
+	void PrintPath(int u, int v);
 
+	Graph(graphTable<T>& g):gt(g) {};
+	vector<vector<int>> path;
 private:
 	graphTable<T> gt;
+	
 };
 
 template<typename T>
@@ -672,6 +677,90 @@ unordered_map<nodeTable<T>*, int> Graph<T>::dijkstra(nodeTable<T> *head)
 
 	return distanceMap;
 }
+template<typename T>
+vector<vector<int>> Graph<T>::createArrayByGraph(graphTable<T> &gt)
+{
+	vector<vector<int>> arrs(gt.nodes.size(), vector<int>(gt.nodes.size(),0));
 
+	for (auto& edge : gt.edges)
+	{
+		arrs[edge->from->value - 1][edge->to->value - 1] = edge->weight;
+	}
+	for (const auto& vectors : arrs)
+	{
+		for (const auto& value : vectors)
+		{
+			cout << value << " ";
+		}
+		cout << endl;
+	}
+	return arrs;
+}
+template<typename T>
+void Graph<T>::Floyd(graphTable<T>& gt,vector<vector<T>> &values)
+{
+	path.assign(values.size(), vector<int>(values.size(), 0));
 
+	for (int i = 0; i < path.size(); ++i)
+	{
+		for (int j = 0; j < path.size(); ++j)
+		{
+			if (i == j)
+			{
+				this->path[i][j] = i;
+			}
+			else
+			{
+				this->path[i][j] = -1;
+			}
+
+		}
+	}
+	for (auto &edge:gt.edges)
+	{
+		
+		path[edge->from->value - 1][edge -> to->value - 1] = edge->from->value - 1;
+		path[edge->to->value - 1][edge -> from->value - 1] = edge->to->value - 1;
+	}
+	for (int k = 0; k < values.size(); ++k)
+	{
+		for (int i = 0; i < values.size(); ++i)
+		{
+			for (int j = 0; j < values.size(); ++j)
+			{
+				if (values[i][k]<INT_MAX&&values[k][j]<INT_MAX&&values[i][j] > values[i][k] + values[k][j])
+				{
+					values[i][j] = values[i][k] + values[k][j];
+					path[i][j] = path[k][j];
+				}
+			}
+		}
+	}
+
+}
+template<typename T>
+void Graph<T>::PrintPath(int u,int v)
+{
+	if (path[u-1][v-1] == -1) { 
+		cout << "No path from " << u << " to " << v << endl;
+		return;
+	}
+	vector<int> p; 
+	p.push_back(u);
+
+	while (u-1 != v-1) 
+	{
+		u = path[u-1][v-1];
+		p.push_back(u);
+	}
+
+	cout << "Path from " << p[0] << " to " << p.back() << ": ";
+	for (int i = 0; i < p.size(); i++) {
+		cout << p[i] << " ";
+		if (i != p.size() - 1) {
+			cout << "-> ";
+		}
+	}
+	cout << endl;
+}
 #endif //

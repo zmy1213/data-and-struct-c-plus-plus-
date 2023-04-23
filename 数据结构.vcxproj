@@ -145,9 +145,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="productAndConsumer.cpp" />
-    <ClCompile Include="readAndWrite.cpp" />
+    <ClCompile Include="readAndWriteReadPriority.cpp" />
     <ClCompile Include="setGraph.h" />
     <ClCompile Include="SingleList.h" />
+    <ClCompile Include="WritePriority.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h" />

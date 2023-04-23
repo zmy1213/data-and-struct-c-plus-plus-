@@ -30,7 +30,7 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="readAndWrite.cpp">
+    <ClCompile Include="readAndWriteReadPriority.cpp">
       <Filter>源文件\操作系统的一些结构</Filter>
     </ClCompile>
     <ClCompile Include="productAndConsumer.cpp">
@@ -47,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="setGraph.h">
       <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WritePriority.cpp">
+      <Filter>源文件\操作系统的一些结构</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

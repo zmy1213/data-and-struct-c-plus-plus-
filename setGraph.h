@@ -11,7 +11,6 @@ struct Element
 	Element() = default;
 	Element(T value) :val(value) {}
 };
-
 template<typename T>
 class UnionFindSet
 {
