@@ -25,6 +25,12 @@
     <Filter Include="源文件\图">
       <UniqueIdentifier>{4d5be5aa-6a54-4a99-965f-d4a7c971ee6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\红黑树">
+      <UniqueIdentifier>{ab683361-78ca-413e-8936-f75260da69e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\AVL">
+      <UniqueIdentifier>{00845dae-2310-4da0-ba34-805553b802cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,11 +51,17 @@
     <ClCompile Include="grouph.cpp">
       <Filter>源文件\图</Filter>
     </ClCompile>
-    <ClCompile Include="setGraph.h">
-      <Filter>头文件</Filter>
-    </ClCompile>
     <ClCompile Include="WritePriority.cpp">
       <Filter>源文件\操作系统的一些结构</Filter>
+    </ClCompile>
+    <ClCompile Include="红黑树.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="setGraph.h">
+      <Filter>源文件\图</Filter>
+    </ClCompile>
+    <ClCompile Include="AVLMeau.h">
+      <Filter>源文件\AVL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,7 +72,13 @@
       <Filter>源文件\二叉树</Filter>
     </ClInclude>
     <ClInclude Include="grouph.h">
-      <Filter>头文件</Filter>
+      <Filter>源文件\图</Filter>
+    </ClInclude>
+    <ClInclude Include="RBT.h">
+      <Filter>源文件\红黑树</Filter>
+    </ClInclude>
+    <ClInclude Include="AVL.h">
+      <Filter>源文件\AVL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
