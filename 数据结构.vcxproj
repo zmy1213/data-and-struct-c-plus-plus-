@@ -143,6 +143,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BTree.cpp" />
+    <ClCompile Include="BTreePlus.cpp" />
     <ClCompile Include="grouph.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
@@ -155,10 +157,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AVL.h" />
+    <ClInclude Include="BPlusTree.h" />
+    <ClInclude Include="BTree.h" />
+    <ClInclude Include="Context.h" />
     <ClInclude Include="doubleList.h" />
     <ClInclude Include="grouph.h" />
+    <ClInclude Include="struct.h" />
     <ClInclude Include="threaded binary tree.h" />
     <ClInclude Include="RBT.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

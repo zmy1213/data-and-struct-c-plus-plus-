@@ -31,6 +31,9 @@
     <Filter Include="源文件\AVL">
       <UniqueIdentifier>{00845dae-2310-4da0-ba34-805553b802cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\B树和B+树">
+      <UniqueIdentifier>{f58a9dd5-174a-4dc3-8166-b61b97611701}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,6 +63,12 @@
     <ClCompile Include="setGraph.h">
       <Filter>源文件\图</Filter>
     </ClCompile>
+    <ClCompile Include="BTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BTreePlus.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">
@@ -76,6 +85,21 @@
     </ClInclude>
     <ClInclude Include="AVL.h">
       <Filter>源文件\AVL</Filter>
+    </ClInclude>
+    <ClInclude Include="BTree.h">
+      <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BPlusTree.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
