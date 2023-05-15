@@ -93,13 +93,13 @@
       <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
     <ClInclude Include="struct.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.h">
-      <Filter>头文件</Filter>
+      <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
     <ClInclude Include="BPlusTree.h">
-      <Filter>头文件</Filter>
+      <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
