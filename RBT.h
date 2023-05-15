@@ -40,6 +40,7 @@ class RedBlackTree
 {
 private:
 	TreeNode<T>* root;	//根结点
+	void printRedBlackTree(TreeNode<T>*& root, std::string indent, bool isLeft);//输出树形图
 public:
 	RedBlackTree();	//无参构造函数
 	RedBlackTree(T x);	//创建一个根结点
@@ -63,6 +64,7 @@ public:
 	bool remove(T e);	//删除结点
 	T operator[] (int r);	//重载[]操作符
 	RBTreeColor getColor(T e);	//获取结点的颜色
+	void PrintRBTree() { this->printRedBlackTree(this->root, "",false); }
 };
 
 //===========函数的具体实现===========
@@ -624,9 +626,10 @@ void insertFixUp(TreeNode<T>*& root, TreeNode<T>*& node)
 				_parent->color = BLACK;
 				_gparent->color = RED;
 				node = _gparent;
+				_parent = node->parent;
 				continue;
 			}
-			if (node == uncle)
+			if (node == node->parent->right)
 			{
 				//叔叔是黑色,且当前节点是右孩子的情况
 				leftRotate(root, _parent);
@@ -651,9 +654,10 @@ void insertFixUp(TreeNode<T>*& root, TreeNode<T>*& node)
 				_parent->color = BLACK;
 				_gparent->color = RED;
 				node = _gparent;
+				_parent = node->parent;
 				continue;
 			}
-			if (uncle == node)
+			if (node->parent->left == node)
 			{
 				//叔叔是黑色,且当前节点是左孩子的情况
 				rightRotate(root, _parent);
@@ -725,7 +729,7 @@ bool RedBlackTree<T>::insert(T e)
 		return false;
 
 	TreeNode<T>* node;
-	node = new TreeNode<T>(e, BLACK);
+	node = new TreeNode<T>(e, RED);
 
 	insertIn(root, node);
 	return true;
@@ -1014,5 +1018,40 @@ ostream& operator<<(ostream& os, RedBlackTree<T>& m)
 		return os;
 	}
 }
+template<typename T>
+void  RedBlackTree<T>::printRedBlackTree(TreeNode<T>*&root,string indent, bool isLeft)
+{
+	if (root == nullptr) {
+		return;
+	}
+	std::cout << indent;
+	if (isLeft) {
+		std::cout << "├─ ";
+	}
+	else {
+		std::cout << "└─ ";
+	}
 
+	std::string colorLabel;
+	if (root->color == RED) {
+		colorLabel = "(R) ";
+	}
+	else {
+		colorLabel = "(B) ";
+	}
+
+	std::cout << colorLabel << root->key << std::endl;
+
+	// 递归打印左子树和右子树
+	std::string childIndent = indent;
+	if (isLeft) {
+		childIndent += "│  ";
+	}
+	else {
+		childIndent += "   ";
+	}
+
+	printRedBlackTree(root->left, childIndent, true);
+	printRedBlackTree(root->right, childIndent, false);
+}
 #endif // !REDBLACKTREE	

@@ -60,9 +60,6 @@
     <ClCompile Include="setGraph.h">
       <Filter>源文件\图</Filter>
     </ClCompile>
-    <ClCompile Include="AVLMeau.h">
-      <Filter>源文件\AVL</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">

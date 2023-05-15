@@ -194,43 +194,17 @@ void TestGraph()
 void TestRBT()
 {
 
-	RedBlackTree<int> rbt1(12);
-	rbt1.insert(1230);
-	rbt1.insert(1231);
-	rbt1.insert(1232);
-	rbt1.insert(1233);
-	rbt1.insert(121);
-	rbt1.insert(120);
-	rbt1.insert(125);
-
-	cout << rbt1 << endl;
-	cout << rbt1.height() << endl;
-	cout << rbt1.size() << endl;
-
-	rbt1.remove(125);
-
-	cout << rbt1 << endl;
-	cout << rbt1.height() << endl;
-	cout << rbt1.size() << endl;
-
-	RedBlackTree<int> rbt2(rbt1);
-	rbt2.insert(123);
-	rbt2.insert(124);
-	rbt2.insert(125);
-
-	cout << rbt2 << endl;
-	cout << rbt2.height() << endl;
-	cout << rbt2.size() << endl;
-
-	RedBlackTree<int> rbt3(rbt2.search(1233));
-
-	cout << rbt3 << endl;
-	cout << rbt3.height() << endl;
-	cout << rbt3.size() << endl;
+	RedBlackTree<int> rbt1;
+	vector<int> t{ 20,10,5,30,40,57,3,2,4,35,25,18,22,23,24,19};
+	for (auto& val : t)
+	{
+		rbt1.insert(val);
+		rbt1.PrintRBTree();
+		cout << "---------------------" << endl;
+	}
+	//rbt1.PrintRBTree();
 }
 //AVL
-
-using namespace std;
 //数组、顺序表的二分查找
 template<class ElementType>
 int BinarySearch(ElementType A[], int n, ElementType x)
@@ -371,6 +345,7 @@ int Meau()
 }
 int main()
 {
+	TestRBT();
 	Meau();
 	return 0;
 }
