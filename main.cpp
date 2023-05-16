@@ -1,95 +1,87 @@
 #include<iostream>
-
+#include "BTRee.h"
 #include "grouph.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include<ctime>
 
-#include "RBT.h"
+//#include "RBT.h"
 #include "AVLMeau.h"
 using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
-#include "BTree.h"
-#include "BPlusTree.h"
-#include "Context.h"
-
-void TestBTree()
+#include "BPTree.h"
+void TestBPTree()
 {
-
-	/*************************************直接调用B  B+ 的调度使用****************************************/
-	/************************************* Direct call B + B method ****************************************/
-	BTree bt;
-	BPlusTree bpt;
-
-	int arr[] = { 18, 31, 12, 10, 15, 48, 45, 47, 50, 52, 23, 30, 20 };
-	for (int i = 0; i < sizeof(arr) / sizeof(int); i++) {
-		bt.insert(arr[i]);
-		bpt.insert(arr[i]);
+	BPlusTree<int> tree(5);
+	vector<int> nums1 = { 1,4,3,2,7,8,6,10,9,13,12,16,15,18,19,11,20,17,5,14 };
+	for (int i = 0; i < nums1.size(); i++) {
+		tree.insert(nums1[i]);
+		tree.printTree();
 	}
-	printf("no delete data:\n");
-	printf("display about B-Tree:\n");
-	bt.level_display();
-	bt.inorder_print();
-	printf("\n\n");
-
-	printf("display about B+ Tree:\n");
-	bt.level_display();
-	bt.inorder_print();
-	printf("\n");
-	bpt.linear_print();
-	printf("\n");
-	bt.NodeNum_print();
-	bpt.NodeNum_print();
-	printf("delete data...\n");
-	int todel[] = { 15, 18, 23, 30, 31, 52, 50 };
-
-	for (int i = 0; i < sizeof(todel) / sizeof(int); i++) {
-		printf("after delete %d\n", todel[i]);
-		bt.del(todel[i]);
-		bpt.del(todel[i]);
+	tree.printData();
+	vector<int> nums2 = { 9,10,8,7,6,4,3,2,1,5,13,14,12,15,11,16,17,18,19 };
+	for (int i = 0; i < nums2.size(); i++) {
+		tree.myDelete(nums2[i]);
+		tree.printTree();
 	}
-
-	bt.NodeNum_print();
-	bpt.NodeNum_print();
-
-	printf("\n\ndelete after data:\n");
-	printf("display about B-Tree:\n");
-	bt.level_display();
-	bt.inorder_print();
-	printf("\n\n");
-
-	printf("display about B+ Tree:\n");
-	bpt.level_display();
-	bpt.inorder_print();
-	printf("\n");
-	bpt.linear_print();
-	printf("\n");
-
-	/***************************************************************************************************/
-	/***************************************************************************************************/
-	/************************************* 用策略方法的调用B    ****************************************/
-	/************************************* strategy pattern method ****************************************/
-
-	printf("strategy method start\n");
-
-	//“具体策略类”只在定义多个“调度类”时使用
-	Context* Context_A = new Context(new BTree()),
-		* Context_B = new Context(new BPlusTree());
-
-	//调用方法，只通过“调度类”实现，算法之间的差异已被屏蔽
-	int arrnum[] = { 10, 2, 3, 4, 5, 9, 8, 7, 6,1 };
-	for (int i = 0; i < sizeof(arrnum) / sizeof(int); i++) {
-		Context_A->Insert(arrnum[i]);
-		Context_B->Insert(arrnum[i]);
+}
+_CMP cmp(const int& a, const int& b) {
+	if (a < b) {
+		return SMALLER;
 	}
-	Context_A->Inorder_Print();
-	printf("\n\n");
-	Context_B->LevelDisplay();
-
-	/***************************************************************************************************/
-	/***************************************************************************************************/
+	else if (a > b) {
+		return BIGGER;
+	}
+	else {
+		return EQUAL;
+	}
+}
+void inorder(TreeNode<int>* h, int level) {
+	if (h == NULL) {
+		return;
+	}
+	KeyNode<int>* k = h->key;
+	TreeNode<int>* child = h->child;
+	cout << "level:" << level << " ";
+	while (k != NULL) {
+		cout << k->value << " ";
+		k = k->next;
+	}
+	cout << endl;
+	while (child != NULL) {
+		inorder(child, level + 1);
+		child = child->next;
+	}
+}
+void TestBTree() {
+	int map[] = {
+	  5,6,1,4,5,14,52,17,84,100,26,58,95,47,
+	  1,4,5,3,0,48,78,95,65,14,789,145,14,
+	  17,87,25,26,111,201,102,458,5555,65,14,
+	  230,-1,549,777,1024,256,2048,10001,10002,10003,
+	  10004,10005,10006,10007
+	};
+	int len = sizeof(map) / sizeof(int);
+	BTree<int> tree;
+	tree.init(3, &cmp);
+	for (int i = 0; i < len; i++) {
+		tree.put(map[i]);
+	}
+	inorder(tree.getHead(), 0);
+	cout << "+++++++++++++++" << endl;
+	tree.remove(6);
+	inorder(tree.getHead(), 0);
+	cout << "+++++++++++++++" << endl;
+	tree.remove(14);
+	inorder(tree.getHead(), 0);
+	cout << "+++++++++++++++" << endl;
+	tree.remove(17);
+	inorder(tree.getHead(), 0);
+	cout << "+++++++++++++++" << endl;
+	tree.remove(789);
+	inorder(tree.getHead(), 0);
 }
 const int INF = INT_MAX; // 表示正无穷
 template<typename T>
@@ -272,19 +264,19 @@ void TestGraph()
 	g.PrintPath(2, 4);
 }
 
-void TestRBT()
-{
-
-	RedBlackTree<int> rbt1;
-	vector<int> t{ 20,10,5,30,40,57,3,2,4,35,25,18,22,23,24,19};
-	for (auto& val : t)
-	{
-		rbt1.insert(val);
-		rbt1.PrintRBTree();
-		cout << "---------------------" << endl;
-	}
-	//rbt1.PrintRBTree();
-}
+//void TestRBT()
+//{
+//
+//	RedBlackTree<int> rbt1;
+//	vector<int> t{ 20,10,5,30,40,57,3,2,4,35,25,18,22,23,24,19};
+//	for (auto& val : t)
+//	{
+//		rbt1.insert(val);
+//		rbt1.PrintRBTree();
+//		cout << "---------------------" << endl;
+//	}
+//	//rbt1.PrintRBTree();
+//}
 //AVL
 //数组、顺序表的二分查找
 template<class ElementType>
@@ -428,6 +420,7 @@ int main()
 {
 	/*TestRBT();
 	Meau();*/
+	TestBPTree();
 	TestBTree();
 	return 0;
 }

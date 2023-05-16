@@ -63,12 +63,6 @@
     <ClCompile Include="setGraph.h">
       <Filter>源文件\图</Filter>
     </ClCompile>
-    <ClCompile Include="BTree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="BTreePlus.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">
@@ -86,19 +80,13 @@
     <ClInclude Include="AVL.h">
       <Filter>源文件\AVL</Filter>
     </ClInclude>
-    <ClInclude Include="BTree.h">
+    <ClInclude Include="BPTree.h">
       <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
-    <ClInclude Include="Tree.h">
+    <ClInclude Include="BPTNode.h">
       <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
-    <ClInclude Include="struct.h">
-      <Filter>源文件\B树和B+树</Filter>
-    </ClInclude>
-    <ClInclude Include="BPlusTree.h">
-      <Filter>源文件\B树和B+树</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.h">
+    <ClInclude Include="BTRee.h">
       <Filter>源文件\B树和B+树</Filter>
     </ClInclude>
   </ItemGroup>
