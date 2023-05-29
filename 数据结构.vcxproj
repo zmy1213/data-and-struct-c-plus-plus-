@@ -143,19 +143,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AVLTets.h" />
     <ClCompile Include="grouph.cpp" />
+    <ClCompile Include="insertsort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="productAndConsumer.cpp" />
+    <ClCompile Include="RBTTest.cpp" />
+    <ClCompile Include="RBTtest.h" />
     <ClCompile Include="readAndWriteReadPriority.cpp" />
     <ClCompile Include="setGraph.h" />
+    <ClCompile Include="shellsort.cpp" />
+    <ClCompile Include="shellsort.h" />
     <ClCompile Include="SingleList.h" />
+    <ClCompile Include="TestGraph.cpp" />
+    <ClCompile Include="testGraph.h" />
     <ClCompile Include="WritePriority.cpp" />
-    <ClCompile Include="红黑树.cpp" />
+    <ClCompile Include="InsertSort.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AVL.h" />
     <ClInclude Include="BPTree.h" />
+    <ClInclude Include="bPlusTreeTest.h" />
+    <ClInclude Include="BTreeTest.h" />
+    <ClInclude Include="config.h" />
     <ClInclude Include="doubleList.h" />
     <ClInclude Include="grouph.h" />
     <ClInclude Include="threaded binary tree.h" />

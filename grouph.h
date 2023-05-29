@@ -143,7 +143,7 @@ public:
 	Graph(graphTable<T>& g):gt(g) {};
 	vector<vector<int>> path;
 private:
-	graphTable<T> gt;
+	graphTable<T> &gt;
 	
 };
 
@@ -686,14 +686,6 @@ vector<vector<int>> Graph<T>::createArrayByGraph(graphTable<T> &gt)
 	{
 		arrs[edge->from->value - 1][edge->to->value - 1] = edge->weight;
 	}
-	for (const auto& vectors : arrs)
-	{
-		for (const auto& value : vectors)
-		{
-			cout << value << " ";
-		}
-		cout << endl;
-	}
 	return arrs;
 }
 template<typename T>
@@ -745,13 +737,24 @@ void Graph<T>::PrintPath(int u,int v)
 		cout << "No path from " << u << " to " << v << endl;
 		return;
 	}
+	if (path[u - 1][v - 1] == u - 1)
+	{
+		cout << "Path from " << u << " to " << v << endl;
+		return;
+	}
 	vector<int> p; 
 	p.push_back(u);
 
 	while (u-1 != v-1) 
 	{
-		u = path[u-1][v-1];
+		u = path[u-1][v-1]+1;
 		p.push_back(u);
+		if (path[u - 1][v - 1] == u - 1)
+		{
+			p.push_back(v);
+			break;
+		}
+		
 	}
 
 	cout << "Path from " << p[0] << " to " << p.back() << ": ";

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef _BALANCEBITREE_H_
 #define _BALANCEBITREE_H_
 #include <iostream>

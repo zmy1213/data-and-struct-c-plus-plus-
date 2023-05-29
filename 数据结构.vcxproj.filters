@@ -34,6 +34,9 @@
     <Filter Include="源文件\B树和B+树">
       <UniqueIdentifier>{f58a9dd5-174a-4dc3-8166-b61b97611701}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\排序">
+      <UniqueIdentifier>{57dfd498-2431-4180-85b8-244d5f15530b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -57,11 +60,35 @@
     <ClCompile Include="WritePriority.cpp">
       <Filter>源文件\操作系统的一些结构</Filter>
     </ClCompile>
-    <ClCompile Include="红黑树.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="setGraph.h">
       <Filter>源文件\图</Filter>
+    </ClCompile>
+    <ClCompile Include="InsertSort.h">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="shellsort.h">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="insertsort.cpp">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="shellsort.cpp">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="AVLTets.h">
+      <Filter>源文件\AVL</Filter>
+    </ClCompile>
+    <ClCompile Include="RBTtest.h">
+      <Filter>源文件\红黑树</Filter>
+    </ClCompile>
+    <ClCompile Include="testGraph.h">
+      <Filter>源文件\图</Filter>
+    </ClCompile>
+    <ClCompile Include="TestGraph.cpp">
+      <Filter>源文件\图</Filter>
+    </ClCompile>
+    <ClCompile Include="RBTTest.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="BTRee.h">
       <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bPlusTreeTest.h">
+      <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="BTreeTest.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
