@@ -160,6 +160,7 @@
     <ClCompile Include="testGraph.h" />
     <ClCompile Include="WritePriority.cpp" />
     <ClCompile Include="InsertSort.h" />
+    <ClCompile Include="静态链表.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AVL.h" />
