@@ -37,6 +37,9 @@
     <Filter Include="源文件\排序">
       <UniqueIdentifier>{57dfd498-2431-4180-85b8-244d5f15530b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\kmp">
+      <UniqueIdentifier>{05b99959-e6a6-4b62-8cc5-6d1a977efe86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -90,6 +93,15 @@
     <ClCompile Include="RBTTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="吸烟者问题.cpp">
+      <Filter>源文件\操作系统的一些结构</Filter>
+    </ClCompile>
+    <ClCompile Include="静态链表.cpp">
+      <Filter>源文件\线性表</Filter>
+    </ClCompile>
+    <ClCompile Include="多个生产者和消费者问题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">
@@ -124,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="BTreeTest.h">
       <Filter>源文件\B树和B+树</Filter>
+    </ClInclude>
+    <ClInclude Include="kmp.h">
+      <Filter>源文件\kmp</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

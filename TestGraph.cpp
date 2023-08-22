@@ -115,11 +115,16 @@ void init2(Graph<int>& g, graphTable<int>& gt)
 }
 void Init3(Graph<int>& g, graphTable<int>& gt)
 {
-	for (int i = 1; i < 6; ++i)
+	for (int i = 0; i < 3; ++i)
 	{
 		g.InsertNode(gt, i);
 	}
-	g.AddEdge(gt, 1, 2, 10);
+	g.AddEdge(gt, 0, 1, 7);
+	g.AddEdge(gt, 0, 2, 5);
+
+	g.AddEdge(gt, 1, 2, -5);
+
+	/*g.AddEdge(gt, 0, 2, 10);
 	g.AddEdge(gt, 1, 5, 5);
 
 	g.AddEdge(gt, 2, 5, 2);
@@ -132,7 +137,7 @@ void Init3(Graph<int>& g, graphTable<int>& gt)
 
 	g.AddEdge(gt, 5, 2, 3);
 	g.AddEdge(gt, 5, 3, 9);
-	g.AddEdge(gt, 5, 4, 2);
+	g.AddEdge(gt, 5, 4, 2);*/
 }
 void TestGraph()
 {
@@ -152,9 +157,9 @@ void TestGraph()
 		{ 0,0,1,0 }
 	};
 	vector<vector<int>> arrays2{
-		{0, 6, 13},
-		{ 10,0,4 },
-		{ 5,INT_MAX,0 }
+		{0, 10, 7},
+		{ INT_MAX,0,-5},
+		{ INT_MAX,INT_MAX,0 }
 	};
 	Graph<int> g1(gt1);
 	Graph<int>g2(gt2);
@@ -169,7 +174,7 @@ void TestGraph()
 
 	Init3(g2, gt2);
 	cout << "dijkstra的距离：" << endl;
-	auto res = g2.dijkstra((gt2.nodes[1]));
+	auto res = g2.dijkstra((gt2.nodes[0]));
 	
 	auto arrs = g2.createArrayByGraph(gt2);
 	//g3.Floyd(gt2, arrays2);//允许负值 dan不允许负值的回路

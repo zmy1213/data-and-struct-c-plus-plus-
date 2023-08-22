@@ -17,11 +17,11 @@ void testSort()
 	}
 	cout << endl;
 }
-int main()
-{
-	//TestGraph();
-	//TestBPTree();
-	TestRBT();
-	testSort();
-	return 0;
-}
+//int main()
+//{
+//	TestGraph();
+//	//TestBPTree();
+//	//TestRBT();
+//	//testSort();
+//	return 0;
+//}

@@ -134,6 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +161,8 @@
     <ClCompile Include="testGraph.h" />
     <ClCompile Include="WritePriority.cpp" />
     <ClCompile Include="InsertSort.h" />
+    <ClCompile Include="吸烟者问题.cpp" />
+    <ClCompile Include="多个生产者和消费者问题.cpp" />
     <ClCompile Include="静态链表.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +173,7 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="doubleList.h" />
     <ClInclude Include="grouph.h" />
+    <ClInclude Include="kmp.h" />
     <ClInclude Include="threaded binary tree.h" />
     <ClInclude Include="RBT.h" />
     <ClInclude Include="BPTNode.h" />
