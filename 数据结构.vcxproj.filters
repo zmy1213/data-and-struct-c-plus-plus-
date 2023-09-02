@@ -90,9 +90,6 @@
     <ClCompile Include="TestGraph.cpp">
       <Filter>源文件\图</Filter>
     </ClCompile>
-    <ClCompile Include="RBTTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="吸烟者问题.cpp">
       <Filter>源文件\操作系统的一些结构</Filter>
     </ClCompile>
@@ -100,6 +97,18 @@
       <Filter>源文件\线性表</Filter>
     </ClCompile>
     <ClCompile Include="多个生产者和消费者问题.cpp">
+      <Filter>源文件\操作系统的一些结构</Filter>
+    </ClCompile>
+    <ClCompile Include="BubbleSort.cpp">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="RBTTest.cpp">
+      <Filter>源文件\红黑树</Filter>
+    </ClCompile>
+    <ClCompile Include="快排.cpp">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
+    <ClCompile Include="heap_sort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

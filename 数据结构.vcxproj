@@ -145,7 +145,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AVLTets.h" />
+    <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="grouph.cpp" />
+    <ClCompile Include="heap_sort.cpp" />
     <ClCompile Include="insertsort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ordered.cpp" />
@@ -163,6 +165,7 @@
     <ClCompile Include="InsertSort.h" />
     <ClCompile Include="吸烟者问题.cpp" />
     <ClCompile Include="多个生产者和消费者问题.cpp" />
+    <ClCompile Include="快排.cpp" />
     <ClCompile Include="静态链表.cpp" />
   </ItemGroup>
   <ItemGroup>
