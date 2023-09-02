@@ -69,25 +69,25 @@ void consumer(int id) {
     }
 }
 
-int main() {
-    srand(time(0));
-
-    thread producers[2];
-    thread consumers[4];
-
-    for (int i = 0; i < 2; ++i) {
-        producers[i] = thread(producer, i);
-    }
-    for (int i = 0; i < 4; ++i) {
-        consumers[i] = thread(consumer, i);
-    }
-
-    for (int i = 0; i < 2; ++i) {
-        producers[i].join();
-    }
-    for (int i = 0; i < 4; ++i) {
-        consumers[i].join();
-    }
-
-    return 0;
-}
+//int main() {
+//    srand(time(0));
+//
+//    thread producers[2];
+//    thread consumers[4];
+//
+//    for (int i = 0; i < 2; ++i) {
+//        producers[i] = thread(producer, i);
+//    }
+//    for (int i = 0; i < 4; ++i) {
+//        consumers[i] = thread(consumer, i);
+//    }
+//
+//    for (int i = 0; i < 2; ++i) {
+//        producers[i].join();
+//    }
+//    for (int i = 0; i < 4; ++i) {
+//        consumers[i].join();
+//    }
+//
+//    return 0;
+//}

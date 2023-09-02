@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void Swap(int& a, int& b)
+void SwapBubblekSort(int& a, int& b)
 {
 	int temp = a;
 	a = b;
@@ -17,7 +17,7 @@ void BubbleSort(int* arr, int len)
 		{
 			if (arr[j] > arr[j + 1])
 			{
-				swap(arr[j], arr[j + 1]);
+				SwapBubblekSort(arr[j], arr[j + 1]);
 				flag = true;
 			}
 		}

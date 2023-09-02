@@ -109,7 +109,7 @@
       <Filter>源文件\排序</Filter>
     </ClCompile>
     <ClCompile Include="heap_sort.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\排序</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="kmp.h">
       <Filter>源文件\kmp</Filter>
+    </ClInclude>
+    <ClInclude Include="heap_sort.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

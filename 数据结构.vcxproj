@@ -176,6 +176,7 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="doubleList.h" />
     <ClInclude Include="grouph.h" />
+    <ClInclude Include="heap_sort.h" />
     <ClInclude Include="kmp.h" />
     <ClInclude Include="threaded binary tree.h" />
     <ClInclude Include="RBT.h" />

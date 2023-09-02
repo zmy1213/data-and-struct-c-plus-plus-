@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void Swap(int&a, int&b)
+void SwapQuickSort(int&a, int&b)
 {
 	if (a != b)
 	{
@@ -18,11 +18,11 @@ int Partition(int* arr, int p, int r)
 		if (arr[j] <= x)
 		{
 			i++;
-			Swap(arr[i], arr[j]);
+			SwapQuickSort(arr[i], arr[j]);
 		}
 	}
 		
-	Swap(arr[++i], arr[r]);
+	SwapQuickSort(arr[++i], arr[r]);
 	return i;
 }
 void QuickSort(int* arr, int p, int r)
