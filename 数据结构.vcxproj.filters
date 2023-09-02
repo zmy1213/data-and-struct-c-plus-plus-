@@ -111,6 +111,9 @@
     <ClCompile Include="heap_sort.cpp">
       <Filter>源文件\排序</Filter>
     </ClCompile>
+    <ClCompile Include="MergeSort.cpp">
+      <Filter>源文件\排序</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doubleList.h">

@@ -66,88 +66,88 @@ void heapsort(int* arr, int length)
 		swapHeapSort(arr[0], arr[--heapSize]);
 	}
 }
-int main()
-{
-	int arr[] = { 16,4,10,14,9,3,2,8,1 };
-	int size = sizeof(arr) / sizeof(arr[0]);
-	heapsort(arr, size);
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << " ";
-	}
-
-	cout << endl;
-	priority_queue<int, vector<int>,greater<int>> pq;
-	for (int i = 0; i < size; ++i)
-	{
-		pq.push(arr[i]);
-	}
-	for (int i = 0; i < size; ++i)
-	{
-		cout << pq.top() << " ";
-		pq.pop();
-	}
-	bool end = true;
-	cout << endl;
-	int* newArr = nullptr;
-	while (true)
-	{
-		int oper;
-		cout << "删除0，插入1,结束2" << endl;
-		cin >> oper;
-		switch (oper)
-		{
-		case 0:
-		{
-			int index = 0;
-			cout << "删除的下表" << endl;
-			cin >> index;
-			size -= 1;
-			swapHeapSort(arr[index], arr[size - 1]);
-			heapify(arr, index, size);
-			int* newArr = new int[size];
-			for (int i = 0; i < size - 1; ++i)
-			{
-				newArr[i] = arr[i];
-			}
-			heapsort(arr, size);
-			for (int i = 0; i < size; i++)
-			{
-				cout << arr[i] << " ";
-			}
-			cout << endl;
-			break;
-		}
-		case 1:
-		{
-			int data = 0;
-			cout << "插入的数据" << endl;
-			cin >> data;
-			size += 1;
-			int* newArr = new int[size];
-			for (int i = 0; i < size - 1; ++i)
-			{
-				newArr[i] = arr[i];
-			}
-			arr[size - 1] = data;
-			heapInsert(arr, data);
-			heapsort(arr, size);
-			for (int i = 0; i < size; i++)
-			{
-				cout << arr[i] << " ";
-			}
-			cout << endl;
-			break;
-		}
-		case 2:
-		{
-			end = false;
-			break;
-		}
-		default:
-			cout << "oper 错误，重新输入" << endl;
-			break;
-		}
-	}
-	return 0;
-}
+//int main()
+//{
+//	int arr[] = { 16,4,10,14,9,3,2,8,1 };
+//	int size = sizeof(arr) / sizeof(arr[0]);
+//	heapsort(arr, size);
+//	for (int i = 0; i < size; i++)
+//	{
+//		cout << arr[i] << " ";
+//	}
+//
+//	cout << endl;
+//	priority_queue<int, vector<int>,greater<int>> pq;
+//	for (int i = 0; i < size; ++i)
+//	{
+//		pq.push(arr[i]);
+//	}
+//	for (int i = 0; i < size; ++i)
+//	{
+//		cout << pq.top() << " ";
+//		pq.pop();
+//	}
+//	bool end = true;
+//	cout << endl;
+//	int* newArr = nullptr;
+//	while (true)
+//	{
+//		int oper;
+//		cout << "删除0，插入1,结束2" << endl;
+//		cin >> oper;
+//		switch (oper)
+//		{
+//		case 0:
+//		{
+//			int index = 0;
+//			cout << "删除的下表" << endl;
+//			cin >> index;
+//			size -= 1;
+//			swapHeapSort(arr[index], arr[size - 1]);
+//			heapify(arr, index, size);
+//			int* newArr = new int[size];
+//			for (int i = 0; i < size - 1; ++i)
+//			{
+//				newArr[i] = arr[i];
+//			}
+//			heapsort(arr, size);
+//			for (int i = 0; i < size; i++)
+//			{
+//				cout << arr[i] << " ";
+//			}
+//			cout << endl;
+//			break;
+//		}
+//		case 1:
+//		{
+//			int data = 0;
+//			cout << "插入的数据" << endl;
+//			cin >> data;
+//			size += 1;
+//			int* newArr = new int[size];
+//			for (int i = 0; i < size - 1; ++i)
+//			{
+//				newArr[i] = arr[i];
+//			}
+//			arr[size - 1] = data;
+//			heapInsert(arr, data);
+//			heapsort(arr, size);
+//			for (int i = 0; i < size; i++)
+//			{
+//				cout << arr[i] << " ";
+//			}
+//			cout << endl;
+//			break;
+//		}
+//		case 2:
+//		{
+//			end = false;
+//			break;
+//		}
+//		default:
+//			cout << "oper 错误，重新输入" << endl;
+//			break;
+//		}
+//	}
+//	return 0;
+//}

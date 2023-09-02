@@ -150,6 +150,7 @@
     <ClCompile Include="heap_sort.cpp" />
     <ClCompile Include="insertsort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MergeSort.cpp" />
     <ClCompile Include="Ordered.cpp" />
     <ClCompile Include="productAndConsumer.cpp" />
     <ClCompile Include="RBTTest.cpp" />
